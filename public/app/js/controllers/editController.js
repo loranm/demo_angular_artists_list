@@ -3,8 +3,6 @@
 (function(){
   angular.module('musicApp').controller('editController', ['$scope','$routeParams','$location','artistsFactory', function($scope, $routeParams, $location, artistsFactory){
 
-    console.log($routeParams)
-
     $scope.artist = artistsFactory.artists[$routeParams.id]
 
 
