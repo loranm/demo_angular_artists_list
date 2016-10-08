@@ -5,8 +5,7 @@
     $scope.artist = {};
 
     $scope.add = function(){
-      artistsFactory.artists.push($scope.artist);
-      $scope.artist = {};
+      artistsFactory.add($scope.artist);
       $location.path('/list');
     };
 
