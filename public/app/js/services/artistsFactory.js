@@ -1,10 +1,9 @@
-'use strict';
-
 (function() {
+    "use strict";
 
     angular.module('musicApp').factory('artistsFactory', function() {
         var service = {};
-        var data =  {
+        var data = {
             artists: [{
                 name: 'Group Love',
                 genre: 'Alternative',
@@ -22,20 +21,18 @@
 
         };
 
-        service.get = function(){
-          return data.artists;
+        service.get = function() {
+            return data.artists;
         };
 
-        service.add = function(artist){
-          data.artists.push(artist)
+        service.add = function(artist) {
+            if (artist.name) {
+                data.artists.push(artist);
+            }
         };
 
-        service.getArtist = function(id){
-          return data.artists[id]
-        }
-
-        service.save = function(id,artist){
-          data.artists[id] = artist
+        service.save = function(id, artist) {
+            data.artists[id] = artist;
         };
 
         return service;
