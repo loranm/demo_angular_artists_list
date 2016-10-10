@@ -5,8 +5,8 @@ var morgan = require('morgan');
 var mongoose = require('mongoose');
 
 
-var config = require('./public/app/js/config.js');
-var User = require('./public/app/models/user.js');
+var config = require('./api/config.js');
+var User = require('./api/models/user.js');
 
 
 var port = process.env.PORT || 8080;
@@ -25,9 +25,13 @@ app.use('/jQuery', express.static(__dirname + '/node_modules/jquery/dist'));
 
 app.use(morgan('dev'));
 
+var apiRoutes = require('./routes/apiRoutes.js');
+
 app.get('/home', function(req,res){
   res.sendFile('index.html');
 });
+
+app.use('/apiRoutes', apiRoutes);
 
 app.listen(port, function(err){
   if (err) throw err;

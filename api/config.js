@@ -1,4 +1,4 @@
 module.exports = {
-	secret: 'macledechiffremen',
+	secret: 'macledechiffrement',
 	database: 'mongodb://localhost:27017/artists'
 };

@@ -7,9 +7,11 @@ module.exports = mongoose.model('User', new Schema({
     required: true,
     unique: true
   },
-  password: {
+  genre: {
     type: String,
     required: true
   },
-  admin: Boolean
+  rating: {
+    type: Number
+  }
 }));
