@@ -1,0 +1,6 @@
+<div class="form-group">
+  <label for="rating">{{ title }}</label>
+  <select name="rating" class="form-control" ng-model="artist.rating" ng-options = "grade.label for grade in grades">
+    <option value="" selected disabled>-- Choisissez une note --</option>
+  </select>
+</div>

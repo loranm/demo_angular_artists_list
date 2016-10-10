@@ -3,7 +3,9 @@
   angular.module('musicApp').factory('artistsFactory',['$resource', function($resource) {
 
     var service = {};
-    var data = $resource('http://localhost:8080/apiRoutes/:id');
+    var data = $resource('http://localhost:8080/apiRoutes/:id', null,{
+      'update': {method: 'PUT', params: {id: '@id'}}
+    });
 
     //configure le requête envoyée au serveur
     service.get = function() {
@@ -30,8 +32,8 @@
       }
     };
 
-    service.save = function(id, artist) {
-      data.artists[id] = artist;
+    service.save = function(option) {
+      data.update({ id: option._id }, option);
     };
 
     return service;
