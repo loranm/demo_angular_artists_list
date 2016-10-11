@@ -2,8 +2,8 @@
     'use strict',
     angular.module('musicApp').controller('editController', ['$scope', '$routeParams', '$location', 'artistsFactory', function($scope, $routeParams, $location, artistsFactory) {
         $scope.artist = artistsFactory.getArtist($routeParams.id);
-
-        $scope.grades = [1,2,3,4,5];
+        $scope.grades = artistsFactory.getGrades();
+        $scope.genres = artistsFactory.getGenres();
 
         $scope.save = function(artist) {
           artistsFactory.save(artist);

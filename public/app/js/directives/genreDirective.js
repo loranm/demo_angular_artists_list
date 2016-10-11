@@ -1,16 +1,17 @@
 (function(){
   "use strict";
+  angular.module('musicApp').directive('ngGenre',[function(){
 
-  angular.module('musicApp').directive('ngRating',[function(){
     return {
       restrict: 'A',
       scope: {
         values: "=",
         selected: "="
       },
-      templateUrl: './partials/selectTemplate.html'
-
+      templateUrl: './partials/genreTemplate.html'
     };
   }]);
+
+
 
 })();
